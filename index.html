@@ -3,474 +3,765 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="WashGo Barretos — Estética automotiva profissional. Lavagem, polimento, vitrificação e atendimento a domicílio em Barretos e região.">
-<title>WashGo Barretos — Estética Automotiva</title>
-<link rel="stylesheet" href="style.css">
+<title>Daniel Lava Jato – Lavagem com Cuidado em Barretos | Bairro América</title>
+<meta name="description" content="Lava jato em Barretos com atendimento diferenciado no Bairro América. Agende sua lavagem pelo WhatsApp. 4,8 ⭐ de avaliação. Carros de passeio, SUVs e pickups.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Daniel Lava Jato – Barretos">
+<meta property="og:description" content="Lava jato com atendimento de qualidade no Bairro América, Barretos. Agende agora pelo WhatsApp.">
+<meta property="og:type" content="website">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoWash",
+  "name": "Daniel Lava Jato",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Barretos",
+    "addressRegion": "SP",
+    "addressCountry": "BR",
+    "neighborhood": "Bairro América"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "18"
+  },
+  "telephone": "[TELEFONE]",
+  "openingHours": "[HORÁRIO]",
+  "priceRange": "$$"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #111111;
+    --gray-dark: #1e1e1e;
+    --gray-mid: #2e2e2e;
+    --gray-border: #3a3a3a;
+    --gray-muted: #888888;
+    --white: #f5f5f3;
+    --white-pure: #ffffff;
+    --accent: #c8c8c8;
+    --whatsapp: #25D366;
+    --whatsapp-dark: #1da851;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  img { display: block; max-width: 100%; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: rgba(17,17,17,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 0.5px solid var(--gray-border);
+  }
+
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .btn-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--whatsapp);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .btn-nav:hover { background: var(--whatsapp-dark); }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    height: 100svh;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem 1.5rem 3rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    filter: brightness(0.42);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.1) 60%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2.6rem, 9vw, 4rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--white-pure);
+    margin-bottom: 1rem;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    color: rgba(245,245,243,0.75);
+    max-width: 340px;
+    margin-bottom: 1.75rem;
+    line-height: 1.5;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--whatsapp);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.9rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--whatsapp-dark); transform: translateY(-1px); }
+
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    color: rgba(245,245,243,0.6);
+  }
+
+  .stars { color: #f5c518; letter-spacing: 1px; font-size: 0.85rem; }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 3.5rem 1.5rem; }
+
+  .section-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.05;
+    color: var(--white-pure);
+    margin-bottom: 1rem;
+  }
+
+  h2 em { font-style: normal; color: var(--accent); }
+
+  /* ─── PROOF STRIP ─── */
+  .proof-strip {
+    background: var(--gray-dark);
+    border-top: 0.5px solid var(--gray-border);
+    border-bottom: 0.5px solid var(--gray-border);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .proof-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .proof-number {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--white-pure);
+    line-height: 1;
+  }
+
+  .proof-desc {
+    font-size: 0.7rem;
+    color: var(--gray-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+
+  /* ─── BEFORE AFTER ─── */
+  .before-after {
+    background: var(--gray-dark);
+  }
+
+  .ba-intro { margin-bottom: 1.75rem; }
+
+  .ba-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .ba-card {
+    position: relative;
+    aspect-ratio: 9 / 14;
+    overflow: hidden;
+    background: var(--gray-mid);
+  }
+
+  .ba-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .ba-label {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0.6rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.75);
+    color: var(--white);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  .ba-label.after { background: var(--whatsapp); color: #fff; }
+
+  /* ─── GALLERY ─── */
+  .gallery-section { background: var(--black); }
+
+  .gallery-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+  }
+
+  .gallery-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .gallery-row.single {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--gray-mid);
+    aspect-ratio: 9 / 13;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  .gallery-tag {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(0,0,0,0.7);
+    color: var(--accent);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  /* ─── DIFERENCIAIS ─── */
+  .diffs-section { background: var(--gray-dark); border-top: 0.5px solid var(--gray-border); }
+
+  .diff-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.75rem;
+  }
+
+  .diff-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.1rem 1.1rem;
+    background: var(--gray-mid);
+    border-radius: 10px;
+    border: 0.5px solid var(--gray-border);
+  }
+
+  .diff-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--black);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+
+  .diff-text h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white-pure);
+    margin-bottom: 0.2rem;
+  }
+
+  .diff-text p {
+    font-size: 0.8rem;
+    color: var(--gray-muted);
+    line-height: 1.4;
+  }
+
+  /* ─── DEPOIMENTOS ─── */
+  .reviews-section { background: var(--black); }
+
+  .review-card {
+    background: var(--gray-dark);
+    border: 0.5px solid var(--gray-border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .review-card + .review-card { margin-top: 0.75rem; }
+
+  .review-stars { color: #f5c518; font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+  .review-text {
+    font-size: 0.88rem;
+    color: rgba(245,245,243,0.85);
+    line-height: 1.55;
+    margin-bottom: 0.75rem;
+    font-style: italic;
+  }
+
+  .review-author {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gray-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── CTA FINAL ─── */
+  .cta-section {
+    background: var(--gray-dark);
+    border-top: 0.5px solid var(--gray-border);
+    text-align: center;
+    padding: 3.5rem 1.5rem 4rem;
+  }
+
+  .cta-section h2 { margin-bottom: 0.75rem; }
+
+  .cta-section p {
+    font-size: 0.9rem;
+    color: rgba(245,245,243,0.65);
+    margin-bottom: 1.75rem;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-cta-big {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: var(--whatsapp);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    width: 100%;
+    max-width: 340px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-cta-big:hover { background: var(--whatsapp-dark); transform: translateY(-1px); }
+
+  .cta-note {
+    margin-top: 0.75rem;
+    font-size: 0.72rem;
+    color: var(--gray-muted);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--black);
+    border-top: 0.5px solid var(--gray-border);
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-meta {
+    font-size: 0.72rem;
+    color: var(--gray-muted);
+    line-height: 1.7;
+  }
+
+  .footer-meta a {
+    color: var(--gray-muted);
+    text-decoration: underline;
+  }
+
+  /* ─── WHATSAPP FLOAT ─── */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    z-index: 200;
+    background: var(--whatsapp);
+    color: #fff;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+    text-decoration: none;
+    transition: transform 0.2s;
+  }
+
+  .whatsapp-float:hover { transform: scale(1.08); }
+
+  .whatsapp-float svg { width: 26px; height: 26px; fill: #fff; }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    height: 0.5px;
+    background: var(--gray-border);
+    margin: 0 1.5rem;
+  }
+
+  @media (min-width: 600px) {
+    .hero-actions { flex-direction: row; align-items: center; }
+    .diff-list { display: grid; grid-template-columns: 1fr 1fr; }
+  }
+</style>
 </head>
 <body>
 
-<!-- ═══ NAVBAR ═══ -->
-<header id="navbar" role="banner">
-  <div class="nav-inner">
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Daniel <span>Lava Jato</span></div>
+  <a href="https://wa.me/5517XXXXXXXX?text=Oi%20Daniel!%20Quero%20agendar%20uma%20lavagem." class="btn-nav" aria-label="Agendar pelo WhatsApp">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.093.541 4.12 1.573 5.901L.057 23.854a.5.5 0 0 0 .608.627l6.177-1.62C8.48 23.558 10.218 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.747 0-3.43-.454-4.904-1.315l-.351-.205-3.644.956.974-3.558-.228-.368A9.959 9.959 0 0 1 2 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+    Agendar
+  </a>
+</nav>
 
-    <!-- Logo -->
-    <a href="#inicio" class="nav-logo" aria-label="WashGo Barretos — Início">
-      <img src="data:image/webp;base64,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" alt="WashGo Barretos" width="120" height="38">
-    </a>
-
-    <!-- Desktop links -->
-    <nav aria-label="Navegação principal">
-      <ul class="nav-links">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-
-    <!-- Right side -->
-    <div class="nav-right">
-      <!-- Social icons -->
-      <div class="nav-social" aria-label="Redes sociais">
-        <a class="nav-icon" id="nav-insta" href="https://instagram.com/washgobarretos" target="_blank" rel="noopener" aria-label="Instagram WashGo">
-          <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a class="nav-icon" id="nav-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp WashGo">
-          <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.524 5.818L0 24l6.335-1.495A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.626 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.365l-.36-.213-3.76.887.942-3.659-.234-.376A9.792 9.792 0 012.18 12C2.18 6.57 6.57 2.18 12 2.18c5.428 0 9.818 4.39 9.818 9.82 0 5.428-4.39 9.818-9.818 9.818z"/></svg>
-        </a>
-      </div>
-
-      <!-- Nav CTA -->
-      <a class="btn-nav" id="nav-cta" href="#" aria-label="Agendar pelo WhatsApp">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.524 5.818L0 24l6.335-1.495A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.626 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.365l-.36-.213-3.76.887.942-3.659-.234-.376A9.792 9.792 0 012.18 12C2.18 6.57 6.57 2.18 12 2.18c5.428 0 9.818 4.39 9.818 9.82 0 5.428-4.39 9.818-9.818 9.818z"/></svg>
-        Agendar
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <img
+      src="Civic.png"
+      alt="Honda Civic preto recém-lavado saindo do Daniel Lava Jato no Bairro América, Barretos"
+      loading="eager"
+    >
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Bairro América · Barretos</div>
+    <h1>Seu carro<br>merece um <em>cuidado</em><br>diferente.</h1>
+    <p class="hero-sub">Atendimento atencioso, resultado que você vê. Agende pelo WhatsApp em menos de 1 minuto.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5517XXXXXXXX?text=Oi%20Daniel!%20Quero%20agendar%20uma%20lavagem." class="btn-primary" aria-label="Agendar lavagem pelo WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.093.541 4.12 1.573 5.901L.057 23.854a.5.5 0 0 0 .608.627l6.177-1.62C8.48 23.558 10.218 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.747 0-3.43-.454-4.904-1.315l-.351-.205-3.644.956.974-3.558-.228-.368A9.959 9.959 0 0 1 2 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+        Agendar pelo WhatsApp
       </a>
-
-      <!-- Hamburger (mobile only) -->
-      <button class="hamburger" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="hero-trust">
+        <span class="stars">★★★★★</span>
+        <span>4,8 · 18 avaliações Google</span>
+      </div>
     </div>
   </div>
-
-  <!-- Mobile menu -->
-  <nav id="mobileMenu" class="mobile-menu" aria-label="Menu mobile" aria-hidden="true">
-    <a href="#inicio"   tabindex="-1">Início</a>
-    <a href="#servicos" tabindex="-1">Serviços</a>
-    <a href="#sobre"    tabindex="-1">Sobre</a>
-    <a href="#contato"  tabindex="-1">Contato</a>
-  </nav>
 </header>
 
-<!-- ═══ HERO ═══ -->
-<main>
-<section id="inicio" aria-label="Início">
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="hero-glow" aria-hidden="true"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="hero-eyebrow">Estética Automotiva · Barretos</div>
-      <h1 class="hero-title display">
-        Seu carro<br>merece o<br><em>melhor</em>
-      </h1>
-      <p class="hero-desc">
-        Lavagem, polimento, vitrificação e proteção —
-        feitos com atenção ao detalhe e produtos de qualidade.
-        Atendemos na loja ou no seu endereço.
-      </p>
-      <div class="hero-actions">
-        <a class="btn-primary" id="hero-btn" href="#" aria-label="Agendar pelo WhatsApp">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.524 5.818L0 24l6.335-1.495A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.626 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.365l-.36-.213-3.76.887.942-3.659-.234-.376A9.792 9.792 0 012.18 12C2.18 6.57 6.57 2.18 12 2.18c5.428 0 9.818 4.39 9.818 9.82 0 5.428-4.39 9.818-9.818 9.818z"/></svg>
-          Agendar pelo WhatsApp
-        </a>
-        <a class="btn-ghost" href="#antes-depois">Ver antes e Depois ↓</a>
-      </div>
-      <div class="hero-stats" role="list" aria-label="Destaques">
-        <div role="listitem"><div class="stat-num">8</div><div class="stat-label">Serviços</div></div>
-        <div role="listitem"><div class="stat-num">100%</div><div class="stat-label">Dedicação</div></div>
-        <div role="listitem"><div class="stat-num">Barretos</div><div class="stat-label">e região</div></div>
-      </div>
-    </div>
+<!-- PROOF STRIP -->
+<div class="proof-strip" role="list" aria-label="Números do Daniel Lava Jato">
+  <div class="proof-item" role="listitem">
+    <span class="proof-number">4,8★</span>
+    <span class="proof-desc">Avaliação Google</span>
   </div>
-</section>
-
-<!-- STRIPE -->
-<div class="stripe" aria-label="Diferenciais">
-  <div class="stripe-inner">
-    <div class="stripe-item"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Atendimento a domicílio</div>
-    <div class="stripe-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Preço transparente</div>
-    <div class="stripe-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Agendamento rápido</div>
-    <div class="stripe-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Sem cobranças ocultas</div>
+  <div class="proof-item" role="listitem">
+    <span class="proof-number">18+</span>
+    <span class="proof-desc">Avaliações reais</span>
+  </div>
+  <div class="proof-item" role="listitem">
+    <span class="proof-number">SUV</span>
+    <span class="proof-desc">RAM · Hilux · Audi</span>
   </div>
 </div>
 
-<!-- ═══ SERVIÇOS ═══ -->
-<section id="servicos" aria-labelledby="servicos-titulo">
-  <div class="servicos-header reveal">
-    <span class="label">O que oferecemos</span>
-    <h2 class="servicos-title display" id="servicos-titulo">Serviços</h2>
-    <p class="servicos-sub">Do essencial ao premium — cada serviço executado com dedicação total.</p>
+<!-- BEFORE / AFTER -->
+<section class="before-after" aria-labelledby="ba-heading">
+  <div class="ba-intro">
+    <p class="section-label">Resultado real</p>
+    <h2 id="ba-heading">Como fica <em>antes</em><br>e depois</h2>
+    <p style="font-size:0.88rem; color:rgba(245,245,243,0.65); margin-top:0.5rem;">A diferença que um cuidado atencioso faz.</p>
   </div>
-
-  <div class="servicos-grid" role="list">
-
-    <article class="servico reveal" role="listitem">
-      <div class="servico-inner container">
-        <span class="servico-num" aria-hidden="true">01</span>
-        <div class="servico-body">
-          <div class="servico-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6l9-3 9 3v6c0 5-4 8.5-9 10C7 19.5 3 16 3 12V6z"/></svg></div>
-          <h3 class="servico-nome">Lavagem Completa</h3>
-          <p class="servico-desc">Interna, externa, rodas e detalhamento de frisos e plásticos. O mais pedido pelos clientes WashGo.</p>
-          <span class="servico-badge">Mais pedido</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="servico reveal" role="listitem">
-      <div class="servico-inner container">
-        <span class="servico-num" aria-hidden="true">02</span>
-        <div class="servico-body">
-          <div class="servico-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
-          <h3 class="servico-nome">Lavagem Detalhada</h3>
-          <p class="servico-desc">Atenção redobrada em cada superfície. Acabamento de alto nível para quem exige o máximo.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="servico reveal" role="listitem">
-      <div class="servico-inner container">
-        <span class="servico-num" aria-hidden="true">03</span>
-        <div class="servico-body">
-          <div class="servico-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3 class="servico-nome">Lavagem Simples</h3>
-          <p class="servico-desc">Rápida, eficiente e com padrão WashGo. Ideal para a rotina do dia a dia.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="servico reveal" role="listitem">
-      <div class="servico-inner container">
-        <span class="servico-num" aria-hidden="true">04</span>
-        <div class="servico-body">
-          <div class="servico-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-          <h3 class="servico-nome">Polimento de Faróis</h3>
-          <p class="servico-desc">Remove o amarelado e restaura a transparência original. Mais segurança na direção noturna.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="servico reveal" role="listitem">
-      <div class="servico-inner container">
-        <span class="servico-num" aria-hidden="true">05</span>
-        <div class="servico-body">
-          <div class="servico-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-          <h3 class="servico-nome">Polimento de Vidros</h3>
-          <p class="servico-desc">Elimina manchas e micro-riscos. Visibilidade e clareza máxima em qualquer condição.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="servico reveal" role="listitem">
-      <div class="servico-inner container">
-        <span class="servico-num" aria-hidden="true">06</span>
-        <div class="servico-body">
-          <div class="servico-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-          <h3 class="servico-nome">Vitrificação</h3>
-          <p class="servico-desc">Proteção de longa duração para a pintura. Brilho intenso e resistência ao tempo e às intempéries.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="servico reveal" role="listitem">
-      <div class="servico-inner container">
-        <span class="servico-num" aria-hidden="true">07</span>
-        <div class="servico-body">
-          <div class="servico-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-          <h3 class="servico-nome">Enceramento</h3>
-          <p class="servico-desc">Camada protetora que realça o brilho e repele sujeira. Resultado duradouro e visual premium.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="servico reveal" role="listitem">
-      <div class="servico-inner container">
-        <span class="servico-num" aria-hidden="true">08</span>
-        <div class="servico-body">
-          <div class="servico-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
-          <h3 class="servico-nome">Lavagem a Domicílio</h3>
-          <p class="servico-desc">Levamos o serviço até você. Seu carro impecável sem precisar sair de casa ou do trabalho.</p>
-          <span class="servico-badge">Exclusivo</span>
-        </div>
-      </div>
-    </article>
-
+  <div class="ba-grid">
+    <div class="ba-card">
+      <img src="CaminhonteSuja.png" alt="Fiat Strada suja chegando para lavagem no Daniel Lava Jato, Barretos" loading="lazy">
+      <span class="ba-label">Antes</span>
+    </div>
+    <div class="ba-card">
+      <img src="CaminhoteLimpa.png" alt="Fiat Strada limpa e brilhando após lavagem no Daniel Lava Jato, Bairro América" loading="lazy">
+      <span class="ba-label after">Depois</span>
+    </div>
   </div>
-
-  <div class="servicos-cta reveal">
-    <p>Não sabe qual serviço escolher? Manda mensagem — a gente te orienta sem compromisso.</p>
-    <a class="btn-primary" id="servicos-btn" href="#" aria-label="Pedir orientação pelo WhatsApp">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.524 5.818L0 24l6.335-1.495A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.626 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.365l-.36-.213-3.76.887.942-3.659-.234-.376A9.792 9.792 0 012.18 12C2.18 6.57 6.57 2.18 12 2.18c5.428 0 9.818 4.39 9.818 9.82 0 5.428-4.39 9.818-9.818 9.818z"/></svg>
-      Pedir orientação gratuita
-    </a>
-  </div>
+  <a href="https://wa.me/5517XXXXXXXX?text=Oi%20Daniel!%20Quero%20agendar%20uma%20lavagem." class="btn-primary" style="width:100%; max-width:400px; display:flex; margin:0 auto;" aria-label="Quero esse resultado, agendar agora">
+    Quero esse resultado →
+  </a>
 </section>
 
+<div class="divider"></div>
 
-<!-- ═══ ANTES / DEPOIS ═══ -->
-<section id="antes-depois" aria-labelledby="comparativo-titulo">
-  <div class="comparativo-header reveal">
-    <span class="label">Antes e depois</span>
-    <h2 class="comparativo-title display" id="comparativo-titulo">Transformações reais</h2>
-    <p class="comparativo-sub">Arraste o divisor nas fotos e veja o resultado em tempo real.</p>
-  </div>
-
-  <div class="comparativo-grid container" role="list">
-    <article class="comparativo-card reveal" role="listitem">
-      <div class="comparativo-info">
-        <div><span>Fan 160</span><h3>Lavagem detalhada, polimento, vitrificação, pigmentação do escapamento e aplicação de verniz no moto</h3></div>
-        <p>Arraste</p>
+<!-- GALLERY -->
+<section class="gallery-section" aria-labelledby="gallery-heading">
+  <p class="section-label">Nossos clientes</p>
+  <h2 id="gallery-heading">De sedãs a<br><em>pickups grandes</em></h2>
+  <div class="gallery-grid">
+    <div class="gallery-row">
+      <div class="gallery-item">
+        <img src="Ram.png" alt="RAM 3500 branca recém-lavada no Daniel Lava Jato, Barretos SP" loading="lazy">
+        <span class="gallery-tag">RAM 3500</span>
       </div>
-      <div class="before-after">
-        <img class="after-img" src="fotosProdutos/Fan160Limpa.jpg" alt="Fan 160 limpa depois da lavagem" loading="lazy">
-        <img class="before-img" src="fotosProdutos/Fan160Suja.jpg" alt="Fan 160 suja antes da lavagem" loading="lazy">
-        <span class="ba-divider" aria-hidden="true"></span>
-        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois da Fan 160">
-      </div>
-    </article>
-
-    <article class="comparativo-card reveal" role="listitem">
-      <div class="comparativo-info">
-        <div><span>Tucson</span><h3>Lavagem detalhada, polimento e vitrificação.</h3></div>
-        <p>Arraste</p>
-      </div>
-      <div class="before-after">
-        <img class="after-img" src="fotosProdutos/TucsonLimpa.jpg" alt="Tucson limpa depois da lavagem" loading="lazy">
-        <img class="before-img" src="fotosProdutos/TucsonSuja.jpg" alt="Tucson suja antes da lavagem" loading="lazy">
-        <span class="ba-divider" aria-hidden="true"></span>
-        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois da Tucson">
-      </div>
-    </article>
-
-    <article class="comparativo-card reveal" role="listitem">
-      <div class="comparativo-info">
-        <div><span>Uno motor</span><h3>Lavagem completa do motor.</h3></div>
-        <p>Arraste</p>
-      </div>
-      <div class="before-after">
-        <img class="after-img" src="fotosProdutos/UnoMotorLimpo.jpeg" alt="Motor do Uno limpo depois da limpeza" loading="lazy">
-        <img class="before-img" src="fotosProdutos/UnoMotorSujo.jpeg" alt="Motor do Uno sujo antes da limpeza" loading="lazy">
-        <span class="ba-divider" aria-hidden="true"></span>
-        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois do motor do Uno">
-      </div>
-    </article>
-
-    <article class="comparativo-card reveal" role="listitem">
-      <div class="comparativo-info">
-        <div><span>Uno carro</span><h3>Polimento e cristalização.</h3></div>
-        <p>Arraste</p>
-      </div>
-      <div class="before-after">
-        <img class="after-img" src="fotosProdutos/UnoPoliECrista.jpeg" alt="Uno polido e cristalizado depois do serviço" loading="lazy">
-        <img class="before-img" src="fotosProdutos/UnoSujo.jpeg" alt="Uno sujo antes do serviço" loading="lazy">
-        <span class="ba-divider" aria-hidden="true"></span>
-        <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois do Uno">
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ═══ OFERTA ═══ -->
-<section class="lancamento-section" aria-labelledby="oferta-titulo">
-  <div class="lancamento-inner">
-    <div class="lancamento-texto reveal">
-      <span class="label">Oferta de lançamento</span>
-      <h2 class="display" style="font-size:clamp(36px,8vw,52px);color:var(--text);margin-bottom:16px" id="oferta-titulo">
-        Primeiros clientes,<br>condição especial
-      </h2>
-      <p style="font-size:15px;color:var(--text2);font-weight:300;line-height:1.75;margin-bottom:12px">
-        Estamos chegando em Barretos e queremos conquistar você com qualidade real. Para quem acredita primeiro, temos um desconto que não se repetirá.
-      </p>
-      <div class="vagas-alert" aria-live="polite">
-        <span class="dot-live" aria-hidden="true"></span>
-        <span>Apenas 10 vagas com desconto disponíveis</span>
+      <div class="gallery-item">
+        <img src="Audi.png" alt="Audi TT conversível prata durante lavagem detalhada no Daniel Lava Jato" loading="lazy">
+        <span class="gallery-tag">Audi TT</span>
       </div>
     </div>
-    <div class="oferta-card reveal">
-      <div class="oferta-tag">Lavagem Completa</div>
-      <div class="oferta-de" aria-label="Preço original: R$ 80,00">De R$ 80,00</div>
-      <div class="oferta-por display" aria-label="Por apenas R$ 50">R$ 50</div>
-      <div class="oferta-desc">Interna + externa + rodas + detalhamento completo</div>
-      <div class="oferta-instrucao">
-          Agende seu horário pelo WhatsApp e ganhe um desconto especial na primeira lavagem. 
+    <div class="gallery-row">
+      <div class="gallery-item">
+        <img src="CaminhoteFrente.png" alt="Toyota Hilux branca lavada em frente ao Daniel Lava Jato no Bairro América" loading="lazy">
+        <span class="gallery-tag">Toyota Hilux</span>
       </div>
-      <a class="btn-primary" id="oferta-btn" href="#" style="width:100%;justify-content:center" aria-label="Garantir vaga com desconto pelo WhatsApp">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.524 5.818L0 24l6.335-1.495A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.626 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.365l-.36-.213-3.76.887.942-3.659-.234-.376A9.792 9.792 0 012.18 12C2.18 6.57 6.57 2.18 12 2.18c5.428 0 9.818 4.39 9.818 9.82 0 5.428-4.39 9.818-9.818 9.818z"/></svg>
-        Garantir minha vaga
-      </a>
-      <div class="vagas-alert" style="justify-content:center;margin-top:12px">
-        <span class="dot-live" aria-hidden="true"></span>
-        <span>10 vagas — oferta por tempo limitado</span>
+      <div class="gallery-item">
+        <img src="PneuCaminhote.png" alt="Detalhe de roda de pickup polida no Daniel Lava Jato Barretos" loading="lazy">
+        <span class="gallery-tag">Detalhamento</span>
+      </div>
+    </div>
+    <div class="gallery-row single">
+      <div class="gallery-item">
+        <img src="Civic.png" alt="Honda Civic preto saindo limpo do Daniel Lava Jato em Barretos" loading="lazy" style="object-position: center 40%;">
+        <span class="gallery-tag">Honda Civic</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ COMO FUNCIONA ═══ -->
-<section id="como-funciona" aria-labelledby="funciona-titulo">
-  <div class="container">
-    <div class="passos-header reveal">
-      <span class="label">Simples assim</span>
-      <h2 class="passos-title display" id="funciona-titulo">Como funciona</h2>
-      <p style="font-size:15px;color:var(--text2);font-weight:300">Três passos. Sem formulário, sem burocracia.</p>
-    </div>
-  </div>
-  <div class="passos-list" role="list" aria-label="Passos para agendamento">
-    <div class="passo reveal" role="listitem">
-      <div class="passo-num" aria-hidden="true">01</div>
-      <h3 class="passo-titulo">Manda mensagem</h3>
-      <p class="passo-desc">Fale com a gente pelo WhatsApp, escolha o serviço e a data que funciona para você.</p>
-    </div>
-    <div class="passo reveal" role="listitem">
-      <div class="passo-num" aria-hidden="true">02</div>
-      <h3 class="passo-titulo">Confirma o horário</h3>
-      <p class="passo-desc">Você decide — traz o carro até nós ou agendamos o atendimento no seu endereço.</p>
-    </div>
-    <div class="passo reveal" role="listitem">
-      <div class="passo-num" aria-hidden="true">03</div>
-      <h3 class="passo-titulo">Recebe o resultado</h3>
-      <p class="passo-desc">Carro entregue limpo, protegido e do jeito que você merece. Sem surpresas no preço.</p>
-    </div>
-  </div>
-</section>
+<div class="divider"></div>
 
-<!-- ═══ SOBRE ═══ -->
-<section id="sobre" aria-labelledby="sobre-titulo">
-  <div class="sobre-inner">
-    <div class="sobre-texto reveal">
-      <span class="label">Quem somos</span>
-      <h2 class="sobre-title display" id="sobre-titulo">WashGo Barretos</h2>
-      <p>Na WashGO, cada detalhe importa. Trabalhamos com estética automotiva premium focada em entregar acabamento impecável, praticidade e valorização para cada veículo. Utilizamos produtos profissionais, técnicas de alto padrão e atendimento personalizado para oferecer resultados que realmente fazem diferença no visual e na preservação do carro ou moto.</p>
-      <p>Nosso compromisso é construir confiança através da qualidade, transparência e dedicação em cada serviço, levando para Barretos e região uma experiência moderna, profissional e feita para quem valoriza seu veículo.</p>
-      <p style="color:var(--text2);font-size:14px;font-style:italic">— Jean, fundador da WashGo Barretos</p>
-      <div class="sobre-valores" style="margin-top:24px">
-        <div class="valor">
-          <div class="valor-titulo">Qualidade</div>
-          <div class="valor-desc">Produtos e técnicas acima da média da região.</div>
-        </div>
-        <div class="valor">
-          <div class="valor-titulo">Transparência</div>
-          <div class="valor-desc">Preço combinado é preço cobrado. Sempre.</div>
-        </div>
-        <div class="valor">
-          <div class="valor-titulo">Pontualidade</div>
-          <div class="valor-desc">Seu horário é sagrado para nós.</div>
-        </div>
-        <div class="valor">
-          <div class="valor-titulo">Domicílio</div>
-          <div class="valor-desc">Levamos o serviço até você.</div>
-        </div>
+<!-- DIFERENCIAIS -->
+<section class="diffs-section" aria-labelledby="diffs-heading">
+  <p class="section-label">Por que escolher</p>
+  <h2 id="diffs-heading">O que faz a<br><em>diferença aqui</em></h2>
+  <div class="diff-list">
+    <div class="diff-item">
+      <div class="diff-icon" aria-hidden="true">🤝</div>
+      <div class="diff-text">
+        <h3>Atendimento que respeita você</h3>
+        <p>Sem enrolação. Seu carro é tratado com o mesmo cuidado que o dono teria.</p>
       </div>
     </div>
-    <div class="sobre-logo reveal" aria-hidden="true">
-      <img src="data:image/webp;base64,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" alt="Logo WashGo Barretos" width="200">
-      <div class="sobre-logo-nome">WASHGO</div>
-      <div class="sobre-logo-sub">Barretos · Estética Automotiva</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ DEPOIMENTOS ═══ -->
-<section aria-labelledby="depo-titulo">
-  <div class="depo-section">
-    <div class="container">
-      <div class="depo-header reveal">
-        <span class="label">Clientes</span>
-        <h2 class="depo-title display" id="depo-titulo">O que dizem</h2>
-        <p style="font-size:15px;color:var(--text2);font-weight:300">Estamos começando — mas cada cliente já atendido tem uma história.</p>
+    <div class="diff-item">
+      <div class="diff-icon" aria-hidden="true">🚿</div>
+      <div class="diff-text">
+        <h3>Lavagem para qualquer veículo</h3>
+        <p>De hatch a pickup grande. Sedan, SUV, caminhonete — atendemos todos.</p>
       </div>
     </div>
-    <div class="depo-grid" role="list">
-      <article class="depo reveal" role="listitem">
-        <div class="depo-stars" aria-label="5 estrelas"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="depo-texto">"Meu carro saiu da WashGo parecendo novo. Atenção ao detalhe que nunca vi em outro lugar em Barretos."</p>
-        <div class="depo-nome">Carlos M.</div>
-        <div class="depo-servico">Lavagem Completa</div>
-      </article>
-      <article class="depo reveal" role="listitem">
-        <div class="depo-stars" aria-label="5 estrelas"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        <p class="depo-texto">"Fiz a lavagem a domicílio e foi perfeito. Carro impecável sem sair de casa — recomendo muito."</p>
-        <div class="depo-nome">Ana Paula R.</div>
-        <div class="depo-servico">Lavagem a Domicílio</div>
-      </article>
-      <div class="depo depo-empty reveal" role="listitem" aria-label="Espaço para futuros depoimentos">
-        <strong>Seu depoimento aqui</strong>
-        <p>Seja um dos primeiros clientes e avalie no Google após o serviço.</p>
+    <div class="diff-item">
+      <div class="diff-icon" aria-hidden="true">📍</div>
+      <div class="diff-text">
+        <h3>Fácil de chegar no Bairro América</h3>
+        <p>Localização central em Barretos com estacionamento fácil na entrada.</p>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-icon" aria-hidden="true">⭐</div>
+      <div class="diff-text">
+        <h3>4,8 no Google com 18 avaliações</h3>
+        <p>Clientes reais que voltam — a nota fala por si.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ CONTATO / CTA FINAL ═══ -->
-<section id="contato" class="cta-section" aria-labelledby="cta-titulo">
-  <div class="cta-glow" aria-hidden="true"></div>
-  <div class="cta-content">
-    <span class="label" style="color:var(--accent2)">Pronto para começar</span>
-    <h2 class="cta-title display" id="cta-titulo">Agende agora</h2>
-    <p class="cta-desc">Resposta em minutos. Atendemos em Barretos e região. Sem formulário, sem espera.</p>
-    <a class="btn-primary" id="cta-final-btn" href="#" style="font-size:16px;padding:18px 36px;margin:0 auto" aria-label="Agendar pelo WhatsApp">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.524 5.818L0 24l6.335-1.495A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.626 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.365l-.36-.213-3.76.887.942-3.659-.234-.376A9.792 9.792 0 012.18 12C2.18 6.57 6.57 2.18 12 2.18c5.428 0 9.818 4.39 9.818 9.82 0 5.428-4.39 9.818-9.818 9.818z"/></svg>
-      Falar no WhatsApp
-    </a>
-    <div class="cta-selos" role="list" aria-label="Garantias">
-      <span role="listitem">✓ Resposta rápida</span>
-      <span role="listitem">✓ Sem compromisso</span>
-      <span role="listitem">✓ Domicílio disponível</span>
-    </div>
-  </div>
-</section>
-</main>
+<div class="divider"></div>
 
-<!-- ═══ FOOTER ═══ -->
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="data:image/webp;base64,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" alt="WashGo Barretos" width="100">
-      <p style="margin-top:12px">Estética automotiva profissional em Barretos, SP. Lavagem, polimento, vitrificação e atendimento a domicílio.</p>
-      <div class="footer-social" aria-label="Redes sociais">
-        <a id="footer-insta" href="https://instagram.com/washgobarretos" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a id="footer-wa" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.524 5.818L0 24l6.335-1.495A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.626 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.365l-.36-.213-3.76.887.942-3.659-.234-.376A9.792 9.792 0 012.18 12C2.18 6.57 6.57 2.18 12 2.18c5.428 0 9.818 4.39 9.818 9.82 0 5.428-4.39 9.818-9.818 9.818z"/></svg>
-        </a>
-      </div>
-    </div>
-    <div>
-      <div class="footer-col-title">Navegação</div>
-      <ul class="footer-links-list">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Contato</div>
-      <ul class="footer-links-list">
-        <li><a id="footer-wa2" href="#">WhatsApp</a></li>
-        <li><a href="https://instagram.com/washgobarretos" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="privacidade.html">Política de Privacidade</a></li>
-      </ul>
-    </div>
+<!-- DEPOIMENTOS -->
+<section class="reviews-section" aria-labelledby="reviews-heading">
+  <p class="section-label">O que dizem</p>
+  <h2 id="reviews-heading">Quem já veio<br><em>volta sempre</em></h2>
+
+  <div class="review-card">
+    <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+    <p class="review-text">"Melhor lava jato de Barretos. Levei minha Hilux uma vez e desde então é o único que confio. Atendimento excelente e resultado impecável."</p>
+    <span class="review-author">— [Nome do cliente] · Bairro América</span>
   </div>
-  <div class="footer-bottom">
-    <p>© 2025 WashGo Barretos — Estética Automotiva</p>
-    <a href="privacidade.html">Privacidade</a>
+
+  <div class="review-card">
+    <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+    <p class="review-text">"Levei meu Civic preto que é difícil de lavar sem riscar. Ficou perfeito, sem uma marca. Recomendo demais!"</p>
+    <span class="review-author">— [Nome do cliente] · Barretos SP</span>
   </div>
+
+  <p style="font-size:0.72rem; color:var(--gray-muted); margin-top:1rem; font-style:italic;">
+    * Depoimentos a confirmar com o cliente — substituir por avaliações reais do Google.
+  </p>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section" aria-labelledby="cta-heading">
+  <p class="section-label">Agende agora</p>
+  <h2 id="cta-heading">Seu carro limpo<br><em>hoje mesmo</em></h2>
+  <p>É só mandar mensagem. A gente responde rápido e confirma seu horário.</p>
+  <a href="https://wa.me/5517XXXXXXXX?text=Oi%20Daniel!%20Quero%20agendar%20uma%20lavagem." class="btn-cta-big" aria-label="Agendar lavagem pelo WhatsApp agora">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.093.541 4.12 1.573 5.901L.057 23.854a.5.5 0 0 0 .608.627l6.177-1.62C8.48 23.558 10.218 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.747 0-3.43-.454-4.904-1.315l-.351-.205-3.644.956.974-3.558-.228-.368A9.959 9.959 0 0 1 2 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+    Agendar pelo WhatsApp
+  </a>
+  <p class="cta-note">Resposta rápida · Sem compromisso · Barretos SP</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Daniel Lava Jato</div>
+  <p class="footer-meta">
+    Bairro América · Barretos – SP<br>
+    <a href="https://wa.me/5517XXXXXXXX">WhatsApp: (17) XXXXX-XXXX</a><br>
+    <small style="opacity:0.5">© 2026 Daniel Lava Jato · Todos os direitos reservados</small>
+  </p>
 </footer>
 
-<script src="script.js" defer></script>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5517XXXXXXXX?text=Oi%20Daniel!%20Quero%20agendar%20uma%20lavagem." class="whatsapp-float" aria-label="Falar com Daniel no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.093.541 4.12 1.573 5.901L.057 23.854a.5.5 0 0 0 .608.627l6.177-1.62C8.48 23.558 10.218 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.747 0-3.43-.454-4.904-1.315l-.351-.205-3.644.956.974-3.558-.228-.368A9.959 9.959 0 0 1 2 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+</a>
+
 </body>
 </html>
